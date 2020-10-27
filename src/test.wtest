@@ -1,0 +1,21 @@
+import personas.*
+import marcas.*
+test "testX" {
+
+    const jarra1 = new Jarras(capacidad = 2, marca= quilmes,contenido = rubia)
+    const rubia = new CervezaRubia(lupulo= 10 , paisDondeSeFabrica ="Alemania", graduacion= 10, graduacionReglamentaria = 2)
+    
+    const persona = new Belgas()
+    persona.jarrasQueCompro(jarra1)
+    persona.peso(55)
+    persona.nivelDeAguante(45)
+    
+    persona.marcasQueLeGustan(rubia)
+    
+    
+	assert.equals(20 ,jarra1.contenidoDeAlcohol(rubia))
+	assert.equals(20,  jarra1.totalDeAlcoholIngerido(rubia))
+	assert.that(persona.estaEbria())
+	assert.that(persona.marcasQueLeGustan().contains(rubia))
+
+}
