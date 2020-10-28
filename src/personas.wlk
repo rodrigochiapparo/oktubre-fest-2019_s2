@@ -5,7 +5,9 @@ class Personas {
 	var property leGustaMusicaTradicional
 	var property nivelDeAguante
 	var property marcasQueLeGustan = []
+	var property pais
 	
+	method comprarJarra(jarra){ jarrasQueCompro.add(jarra)}
 	
 	method estaEbria() { return jarrasQueCompro.sum({ j => j.contenidoDeAlcohol()}) * peso > nivelDeAguante}
 	
@@ -21,7 +23,7 @@ class Personas {
 	
 	method esPatriota() { return jarrasQueCompro.all({ j => j.paisDondeSeFabrica() == self.pais() })}
 	
-	method pais(){}
+	
 	
 	
 }

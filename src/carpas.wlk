@@ -9,13 +9,14 @@ class Carpas {
   
   method vendenJarras(){ return true}
   
-  method dejaEntrarA(persona){ return disponibilidad > 0 and not persona.estaEbria()}
+  method dejaEntrarA(persona){ return disponibilidad > genteQueHayDentro.size() and not persona.estaEbria()}
   
   method ebriosEmpedernidos(){ return genteQueHayDentro.count({ g => g.esEbrioEmpedernido()})}
   
   method servirJarra(persona ,capacidad, contenido){
   	if (genteQueHayDentro.contains(persona))
   	 { persona.jarrasQueCompro().add( new Jarras(marca = self.marcaQueVende() , capacidad = capacidad , contenido = contenido) ) }
+  	 else self.error("la persona no se encuentra en la carpa ")
   }
   
   
